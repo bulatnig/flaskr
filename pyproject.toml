@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "flaskr"
+version = "1.0.0"
+description = "Flask tutorial"
+authors = ["Your Name <you@example.com>"]
+package-mode = false  # use Poetry only for dependency management
+
+[tool.poetry.dependencies]
+python = "*"
+flask = "*"
+
+[tool.poetry.group.test.dependencies]
+pytest = "*"
+coverage = "*"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]  # Fix ModuleNotFoundError: No module named 'app'
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["app"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
